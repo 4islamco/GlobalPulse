@@ -96,6 +96,7 @@ const HeroCarousel = () => {
   return (
     <div className="relative overflow-hidden bg-black" style={{ height: "70vh", maxHeight: "650px", minHeight: "400px" }}>
       <div className="absolute inset-0 z-10 bg-gradient-to-t from-black via-black/50 to-transparent opacity-70"></div>
+      <div className="absolute inset-0 z-10 gradient-overlay-dark opacity-40"></div>
       
       {/* Carousel content */}
       <div className="h-full relative">
