@@ -4,20 +4,20 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 222.2 47.4% 11.2%;
+    --background: 230 25% 18%;
+    --foreground: 210 40% 98%;
     
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 232 14% 31%;
+    --muted-foreground: 215 20% 75%;
     
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
+    --popover: 230 25% 18%;
+    --popover-foreground: 210 40% 98%;
     
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
+    --card: 230 25% 22%;
+    --card-foreground: 210 40% 98%;
     
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 232 14% 31%;
+    --input: 232 14% 31%;
     
     --primary: 240 65% 35%;
     --primary-foreground: 210 40% 98%;
@@ -25,25 +25,25 @@
     --secondary: 0 65% 50%;
     --secondary-foreground: 210 40% 98%;
     
-    --accent: 45 100% 51%;
-    --accent-foreground: 24 9.8% 10%;
+    --accent: 240 65% 35%;
+    --accent-foreground: 210 40% 98%;
     
     --destructive: 0 100% 50%;
     --destructive-foreground: 210 40% 98%;
     
-    --ring: 215 20.2% 65.1%;
+    --ring: 240 65% 40%;
     
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --chart-1: 240 65% 35%;
-    --chart-2: 0 65% 50%;
-    --chart-3: 45 100% 51%;
-    --chart-4: 142 71% 45%;
-    --chart-5: 262 83% 58%;
+    --chart-1: 240 65% 50%;
+    --chart-2: 0 65% 55%;
+    --chart-3: 45 100% 60%;
+    --chart-4: 142 71% 50%;
+    --chart-5: 262 83% 60%;
     
     /* Custom gradient colors */
-    --blueberry: 240 65% 35%;
-    --red: 0 65% 50%;
+    --blueberry: 240 65% 45%;
+    --red: 0 65% 55%;
   }
 
   * {
@@ -67,7 +67,7 @@
   }
 
   .skeleton {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background: linear-gradient(90deg, hsl(230 25% 25%) 25%, hsl(230 25% 35%) 50%, hsl(230 25% 25%) 75%);
     background-size: 200% 100%;
     animation: shimmer 1.5s infinite linear;
   }
@@ -79,16 +79,16 @@
   }
   
   ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: hsl(230 25% 15%);
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #c5c5c5;
+    background: hsl(240 30% 40%);
     border-radius: 4px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #a1a1a1;
+    background: hsl(0 50% 50%);
   }
 }
 
