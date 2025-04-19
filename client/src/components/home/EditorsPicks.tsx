@@ -27,26 +27,26 @@ const EditorsPicks = () => {
     return (
       <section className="mb-12">
         <div className="flex items-center justify-between mb-6">
-          <Skeleton className="h-8 w-48" />
-          <Skeleton className="h-5 w-24" />
+          <Skeleton className="h-8 w-48 bg-card" />
+          <Skeleton className="h-5 w-24 bg-card" />
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {Array(4).fill(0).map((_, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <Skeleton className="h-44 w-full" />
+            <div key={index} className="bg-card rounded-lg shadow-sm overflow-hidden border border-muted">
+              <Skeleton className="h-44 w-full bg-muted" />
               <div className="p-4">
-                <Skeleton className="h-3 w-32 mb-1" />
-                <Skeleton className="h-5 w-full mb-2" />
-                <Skeleton className="h-5 w-3/4 mb-2" />
-                <Skeleton className="h-4 w-full mb-3" />
+                <Skeleton className="h-3 w-32 mb-1 bg-muted" />
+                <Skeleton className="h-5 w-full mb-2 bg-muted" />
+                <Skeleton className="h-5 w-3/4 mb-2 bg-muted" />
+                <Skeleton className="h-4 w-full mb-3 bg-muted" />
               </div>
               <div className="px-4 pb-4">
                 <div className="flex items-center">
-                  <Skeleton className="w-8 h-8 rounded-full mr-2" />
+                  <Skeleton className="w-8 h-8 rounded-full mr-2 bg-muted" />
                   <div>
-                    <Skeleton className="h-3 w-24" />
-                    <Skeleton className="h-2 w-16 mt-1" />
+                    <Skeleton className="h-3 w-24 bg-muted" />
+                    <Skeleton className="h-2 w-16 mt-1 bg-muted" />
                   </div>
                 </div>
               </div>
@@ -85,25 +85,26 @@ const EditorsPicks = () => {
           </svg>
           Editor's Picks
         </h2>
-        <Link href="/editors-picks">
-          <a className="text-secondary hover:text-secondary/70 font-medium text-sm flex items-center">
-            View All
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              width="16" 
-              height="16" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              className="ml-1 text-xs"
-            >
-              <path d="M5 12h14"/>
-              <path d="m12 5 7 7-7 7"/>
-            </svg>
-          </a>
+        <Link 
+          href="/editors-picks" 
+          className="text-secondary hover:text-secondary/70 font-medium text-sm flex items-center"
+        >
+          View All
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="16" 
+            height="16" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="2" 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            className="ml-1 text-xs"
+          >
+            <path d="M5 12h14"/>
+            <path d="m12 5 7 7-7 7"/>
+          </svg>
         </Link>
       </div>
       
@@ -113,34 +114,35 @@ const EditorsPicks = () => {
           return (
             <motion.div 
               key={article.id} 
-              className="bg-white rounded-lg shadow-sm overflow-hidden transition-all hover:shadow-md flex flex-col"
+              className="bg-card rounded-lg shadow-sm overflow-hidden transition-all hover:shadow-md flex flex-col border border-muted"
               whileHover={{ y: -5 }}
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
             >
-              <Link href={`/article/${article.id}`}>
-                <a className="block flex-grow group">
-                  <div className="relative h-44 overflow-hidden">
-                    <img 
-                      src={article.imageUrl} 
-                      alt={article.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <span className="absolute top-3 right-3 bg-white/80 backdrop-blur-sm text-gray-800 text-xs font-medium px-2 py-1 rounded">
-                      {article.readingTimeMinutes} min read
-                    </span>
-                  </div>
-                  <div className="p-4">
-                    <span className="text-xs font-medium text-secondary mb-1 block">
-                      Editor's Choice
-                    </span>
-                    <h3 className="font-bold text-base mb-2 font-sans group-hover:text-secondary transition-colors line-clamp-2">
-                      {article.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm mb-3 line-clamp-2">
-                      {article.summary}
-                    </p>
-                  </div>
-                </a>
+              <Link 
+                href={`/article/${article.id}`}
+                className="block flex-grow group"
+              >
+                <div className="relative h-44 overflow-hidden">
+                  <img 
+                    src={article.imageUrl} 
+                    alt={article.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-3 right-3 bg-card/80 backdrop-blur-sm text-foreground text-xs font-medium px-2 py-1 rounded border border-muted">
+                    {article.readingTimeMinutes} min read
+                  </span>
+                </div>
+                <div className="p-4">
+                  <span className="text-xs font-medium text-secondary mb-1 block">
+                    Editor's Choice
+                  </span>
+                  <h3 className="font-bold text-base mb-2 font-sans group-hover:text-secondary transition-colors line-clamp-2">
+                    {article.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-3 line-clamp-2">
+                    {article.summary}
+                  </p>
+                </div>
               </Link>
               {author && (
                 <div className="px-4 pb-4 mt-auto">
@@ -152,7 +154,7 @@ const EditorsPicks = () => {
                     />
                     <div className="text-xs">
                       <p className="font-medium">{author.name}</p>
-                      <p className="text-gray-500">{formatDate(article.publishedAt)}</p>
+                      <p className="text-muted-foreground">{formatDate(article.publishedAt)}</p>
                     </div>
                   </div>
                 </div>
