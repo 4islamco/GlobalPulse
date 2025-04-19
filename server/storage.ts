@@ -7,20 +7,6 @@ import {
   regions, type Region, type InsertRegion,
   regionNews, type RegionNews, type InsertRegionNews,
   trendingTopics, type TrendingTopic, type InsertTrendingTopic,
-
-{
-  title: "Exciting New Developments in AI Technology",
-  summary: "Recent advancements have pushed AI technology to new heights, promising to revolutionize various sectors.",
-  content: "In the past year, artificial intelligence has gained significant traction across industries...",
-  imageUrl: "https://images.unsplash.com/photo-1573497019419-28a5b7b4cfdc?auto=format&fit=crop&w=600&h=400&q=80",
-  categoryId: 5, // Assuming category 5 exists, e.g., Technology
-  authorId: 3, // Assuming author 3 exists
-  publishedAt: new Date().toISOString(),
-  isFeatured: true,
-  isEditorsPick: false,
-  readingTimeMinutes: 6
-}
-
   liveUpdates, type LiveUpdate, type InsertLiveUpdate,
   dailyBriefingItems, type DailyBriefingItem, type InsertDailyBriefingItem
 } from "@shared/schema";
