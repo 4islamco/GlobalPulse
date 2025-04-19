@@ -78,7 +78,7 @@ const TopStories = () => {
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-bold font-sans">Top Stories</h2>
         <Link href="/category/all">
-          <a className="text-secondary hover:text-secondary/70 font-medium text-sm flex items-center">
+          <span className="text-secondary hover:text-secondary/70 font-medium text-sm flex items-center cursor-pointer">
             View All
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
@@ -95,7 +95,7 @@ const TopStories = () => {
               <path d="M5 12h14"/>
               <path d="m12 5 7 7-7 7"/>
             </svg>
-          </a>
+          </span>
         </Link>
       </div>
       
