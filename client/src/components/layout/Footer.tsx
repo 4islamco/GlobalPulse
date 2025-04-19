@@ -2,14 +2,14 @@ import { Link } from "wouter";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-background border-t border-white/5 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="text-lg font-bold mb-4 font-sans">REAL<span className="text-secondary-400">WORLD</span></h3>
-            <p className="text-gray-400 mb-4 text-sm">Delivering accurate, insightful news and analysis from around the globe. Our mission is to inform, contextualize, and illuminate.</p>
+            <h3 className="text-lg font-bold mb-4 font-sans gradient-text">REAL<span className="world-logo">WORLD</span></h3>
+            <p className="text-white/60 mb-4 text-sm">Delivering accurate, insightful news and analysis from around the globe. Our mission is to inform, contextualize, and illuminate.</p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-white/50 hover:text-secondary transition-colors">
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
                   width="20" 
@@ -98,47 +98,47 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-medium mb-4 text-gray-300">News Categories</h4>
+            <h4 className="font-medium mb-4 text-white/90">News Categories</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/category/world" className="text-gray-400 hover:text-white transition-colors">World</Link></li>
-              <li><Link href="/category/politics" className="text-gray-400 hover:text-white transition-colors">Politics</Link></li>
-              <li><Link href="/category/business" className="text-gray-400 hover:text-white transition-colors">Business</Link></li>
-              <li><Link href="/category/technology" className="text-gray-400 hover:text-white transition-colors">Technology</Link></li>
-              <li><Link href="/category/science" className="text-gray-400 hover:text-white transition-colors">Science</Link></li>
-              <li><Link href="/category/health" className="text-gray-400 hover:text-white transition-colors">Health</Link></li>
-              <li><Link href="/category/sports" className="text-gray-400 hover:text-white transition-colors">Sports</Link></li>
-              <li><Link href="/category/arts" className="text-gray-400 hover:text-white transition-colors">Arts</Link></li>
+              <li><Link href="/category/world" className="text-white/60 hover:text-secondary transition-colors">World</Link></li>
+              <li><Link href="/category/politics" className="text-white/60 hover:text-secondary transition-colors">Politics</Link></li>
+              <li><Link href="/category/business" className="text-white/60 hover:text-secondary transition-colors">Business</Link></li>
+              <li><Link href="/category/technology" className="text-white/60 hover:text-secondary transition-colors">Technology</Link></li>
+              <li><Link href="/category/science" className="text-white/60 hover:text-secondary transition-colors">Science</Link></li>
+              <li><Link href="/category/health" className="text-white/60 hover:text-secondary transition-colors">Health</Link></li>
+              <li><Link href="/category/sports" className="text-white/60 hover:text-secondary transition-colors">Sports</Link></li>
+              <li><Link href="/category/arts" className="text-white/60 hover:text-secondary transition-colors">Arts</Link></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-medium mb-4 text-gray-300">Company</h4>
+            <h4 className="font-medium mb-4 text-white/90">Company</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Leadership Team</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Careers</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Advertise</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Content Licensing</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Ethics Policy</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="text-white/60 hover:text-secondary transition-colors">About Us</a></li>
+              <li><a href="#" className="text-white/60 hover:text-secondary transition-colors">Leadership Team</a></li>
+              <li><a href="#" className="text-white/60 hover:text-secondary transition-colors">Careers</a></li>
+              <li><a href="#" className="text-white/60 hover:text-secondary transition-colors">Advertise</a></li>
+              <li><a href="#" className="text-white/60 hover:text-secondary transition-colors">Content Licensing</a></li>
+              <li><a href="#" className="text-white/60 hover:text-secondary transition-colors">Ethics Policy</a></li>
+              <li><a href="#" className="text-white/60 hover:text-secondary transition-colors">Terms of Service</a></li>
+              <li><a href="#" className="text-white/60 hover:text-secondary transition-colors">Privacy Policy</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-medium mb-4 text-gray-300">Support</h4>
+            <h4 className="font-medium mb-4 text-white/90">Support</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">FAQs</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Subscription Help</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">App Support</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Accessibility</a></li>
+              <li><a href="#" className="text-white/60 hover:text-secondary transition-colors">Contact Us</a></li>
+              <li><a href="#" className="text-white/60 hover:text-secondary transition-colors">FAQs</a></li>
+              <li><a href="#" className="text-white/60 hover:text-secondary transition-colors">Subscription Help</a></li>
+              <li><a href="#" className="text-white/60 hover:text-secondary transition-colors">App Support</a></li>
+              <li><a href="#" className="text-white/60 hover:text-secondary transition-colors">Accessibility</a></li>
             </ul>
             
             <div className="mt-6">
-              <h4 className="font-medium mb-3 text-gray-300">Download Our App</h4>
+              <h4 className="font-medium mb-3 text-white/90">Download Our App</h4>
               <div className="flex space-x-3">
-                <a href="#" className="bg-gray-800 hover:bg-gray-700 p-2 rounded transition-colors">
+                <a href="#" className="bg-white/10 hover:bg-white/20 p-2 rounded-md border border-white/10 transition-all hover:scale-105">
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
                     width="20" 
@@ -156,7 +156,7 @@ const Footer = () => {
                     <path d="M6.22 3.04c1.33.97 1.96 2.23 2.04 3.38A2.92 2.92 0 0 0 5.5 5c-1.95 0-3.44 2.37-3.44 5.3s2.55 7.68 3.95 7.68c1.14 0 2.26-.67 3.34-1.95"/>
                   </svg>
                 </a>
-                <a href="#" className="bg-gray-800 hover:bg-gray-700 p-2 rounded transition-colors">
+                <a href="#" className="bg-white/10 hover:bg-white/20 p-2 rounded-md border border-white/10 transition-all hover:scale-105">
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
                     width="20" 
@@ -177,7 +177,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-800 pt-6 text-center text-sm text-gray-500">
+        <div className="border-t border-white/5 pt-6 text-center text-sm text-white/40">
           <p>&copy; {new Date().getFullYear()} REALWORLD News Network. All rights reserved.</p>
         </div>
       </div>

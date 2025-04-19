@@ -75,7 +75,7 @@ const EditorsPicks = () => {
             strokeWidth="2" 
             strokeLinecap="round" 
             strokeLinejoin="round" 
-            className="mr-2 text-accent"
+            className="mr-2 gradient-text"
           >
             <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
             <path d="M5 3v4"/>
@@ -83,11 +83,11 @@ const EditorsPicks = () => {
             <path d="M3 5h4"/>
             <path d="M17 19h4"/>
           </svg>
-          Editor's Picks
+          <span className="gradient-text">Editor's Picks</span>
         </h2>
         <Link 
           href="/editors-picks" 
-          className="text-secondary hover:text-secondary/70 font-medium text-sm flex items-center"
+          className="text-primary hover:text-primary/80 font-medium text-sm flex items-center"
         >
           View All
           <svg 
@@ -114,7 +114,7 @@ const EditorsPicks = () => {
           return (
             <motion.div 
               key={article.id} 
-              className="bg-card rounded-lg shadow-sm overflow-hidden transition-all hover:shadow-md flex flex-col border border-muted"
+              className="bg-card rounded-lg shadow-lg overflow-hidden transition-all hover:shadow-xl flex flex-col border border-primary/10"
               whileHover={{ y: -5 }}
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
             >
@@ -123,20 +123,21 @@ const EditorsPicks = () => {
                 className="block flex-grow group"
               >
                 <div className="relative h-44 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10"></div>
                   <img 
                     src={article.imageUrl} 
                     alt={article.title} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <span className="absolute top-3 right-3 bg-card/80 backdrop-blur-sm text-foreground text-xs font-medium px-2 py-1 rounded border border-muted">
+                  <span className="absolute top-3 right-3 bg-card/80 backdrop-blur-sm text-foreground text-xs font-medium px-2 py-1 rounded-md border border-primary/20 z-20">
                     {article.readingTimeMinutes} min read
                   </span>
                 </div>
                 <div className="p-4">
-                  <span className="text-xs font-medium text-secondary mb-1 block">
+                  <span className="text-xs font-medium gradient-text mb-1 block">
                     Editor's Choice
                   </span>
-                  <h3 className="font-bold text-base mb-2 font-sans group-hover:text-secondary transition-colors line-clamp-2">
+                  <h3 className="font-bold text-base mb-2 font-sans group-hover:text-primary transition-colors line-clamp-2">
                     {article.title}
                   </h3>
                   <p className="text-muted-foreground text-sm mb-3 line-clamp-2">
@@ -147,11 +148,13 @@ const EditorsPicks = () => {
               {author && (
                 <div className="px-4 pb-4 mt-auto">
                   <div className="flex items-center">
-                    <img 
-                      src={author.avatarUrl} 
-                      alt={author.name} 
-                      className="w-8 h-8 rounded-full object-cover mr-2"
-                    />
+                    <div className="w-8 h-8 rounded-full border border-primary/20 p-0.5 mr-2 overflow-hidden">
+                      <img 
+                        src={author.avatarUrl} 
+                        alt={author.name} 
+                        className="w-full h-full rounded-full object-cover"
+                      />
+                    </div>
                     <div className="text-xs">
                       <p className="font-medium">{author.name}</p>
                       <p className="text-muted-foreground">{formatDate(article.publishedAt)}</p>
