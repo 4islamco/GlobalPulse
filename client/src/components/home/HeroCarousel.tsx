@@ -125,7 +125,7 @@ const HeroCarousel = () => {
                   animate={{ opacity: index === currentSlide ? 1 : 0, y: index === currentSlide ? 0 : 20 }}
                   transition={{ delay: 0.3, duration: 0.5 }}
                 >
-                  <span className="inline-block bg-primary text-white text-xs font-semibold px-2 py-1 rounded mb-3 tracking-wide uppercase">
+                  <span className="inline-block gradient-blueberry-red text-white text-xs font-semibold px-2 py-1 rounded mb-3 tracking-wide uppercase">
                     {/* Since we don't have category data in the article, we'll use a placeholder */}
                     Featured
                   </span>
@@ -136,7 +136,7 @@ const HeroCarousel = () => {
                     {article.summary}
                   </p>
                   <Link href={`/article/${article.id}`}>
-                    <a className="inline-flex items-center text-white font-medium hover:underline">
+                    <div className="inline-flex items-center text-white font-medium hover:underline cursor-pointer">
                       Read Full Story
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
@@ -153,7 +153,7 @@ const HeroCarousel = () => {
                         <path d="M5 12h14"/>
                         <path d="m12 5 7 7-7 7"/>
                       </svg>
-                    </a>
+                    </div>
                   </Link>
                 </motion.div>
               </div>
