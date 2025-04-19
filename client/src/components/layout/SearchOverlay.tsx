@@ -36,7 +36,7 @@ const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
   };
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="sync">
       {isOpen && (
         <motion.div 
           className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-start justify-center pt-20"

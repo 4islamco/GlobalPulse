@@ -11,7 +11,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const [location] = useLocation();
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="sync">
       {isOpen && (
         <div className="fixed inset-0 z-40 lg:hidden">
           <motion.div 
@@ -54,86 +54,104 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
               </button>
             </div>
             <div className="py-2">
-              <Link href="/" onClick={onClose}>
-                <a className={`block px-4 py-2 ${
+              <Link 
+                href="/" 
+                onClick={onClose}
+                className={`block px-4 py-2 ${
                   location === "/" 
                     ? "text-primary font-medium border-l-4 border-primary bg-gray-50" 
                     : "text-gray-700 hover:bg-gray-50 hover:text-primary font-medium border-l-4 border-transparent hover:border-primary"
-                }`}>
-                  Home
-                </a>
+                }`}
+              >
+                Home
               </Link>
-              <Link href="/category/world" onClick={onClose}>
-                <a className={`block px-4 py-2 ${
+              <Link 
+                href="/category/world" 
+                onClick={onClose}
+                className={`block px-4 py-2 ${
                   location === "/category/world" 
                     ? "text-primary font-medium border-l-4 border-primary bg-gray-50" 
                     : "text-gray-700 hover:bg-gray-50 hover:text-primary font-medium border-l-4 border-transparent hover:border-primary"
-                }`}>
-                  World
-                </a>
+                }`}
+              >
+                World
               </Link>
-              <Link href="/category/politics" onClick={onClose}>
-                <a className={`block px-4 py-2 ${
+              <Link 
+                href="/category/politics" 
+                onClick={onClose}
+                className={`block px-4 py-2 ${
                   location === "/category/politics" 
                     ? "text-primary font-medium border-l-4 border-primary bg-gray-50" 
                     : "text-gray-700 hover:bg-gray-50 hover:text-primary font-medium border-l-4 border-transparent hover:border-primary"
-                }`}>
-                  Politics
-                </a>
+                }`}
+              >
+                Politics
               </Link>
-              <Link href="/category/business" onClick={onClose}>
-                <a className={`block px-4 py-2 ${
+              <Link 
+                href="/category/business" 
+                onClick={onClose}
+                className={`block px-4 py-2 ${
                   location === "/category/business" 
                     ? "text-primary font-medium border-l-4 border-primary bg-gray-50" 
                     : "text-gray-700 hover:bg-gray-50 hover:text-primary font-medium border-l-4 border-transparent hover:border-primary"
-                }`}>
-                  Business
-                </a>
+                }`}
+              >
+                Business
               </Link>
-              <Link href="/category/technology" onClick={onClose}>
-                <a className={`block px-4 py-2 ${
+              <Link 
+                href="/category/technology" 
+                onClick={onClose}
+                className={`block px-4 py-2 ${
                   location === "/category/technology" 
                     ? "text-primary font-medium border-l-4 border-primary bg-gray-50" 
                     : "text-gray-700 hover:bg-gray-50 hover:text-primary font-medium border-l-4 border-transparent hover:border-primary"
-                }`}>
-                  Technology
-                </a>
+                }`}
+              >
+                Technology
               </Link>
-              <Link href="/category/science" onClick={onClose}>
-                <a className={`block px-4 py-2 ${
+              <Link 
+                href="/category/science" 
+                onClick={onClose}
+                className={`block px-4 py-2 ${
                   location === "/category/science" 
                     ? "text-primary font-medium border-l-4 border-primary bg-gray-50" 
                     : "text-gray-700 hover:bg-gray-50 hover:text-primary font-medium border-l-4 border-transparent hover:border-primary"
-                }`}>
-                  Science
-                </a>
+                }`}
+              >
+                Science
               </Link>
-              <Link href="/category/health" onClick={onClose}>
-                <a className={`block px-4 py-2 ${
+              <Link 
+                href="/category/health" 
+                onClick={onClose}
+                className={`block px-4 py-2 ${
                   location === "/category/health" 
                     ? "text-primary font-medium border-l-4 border-primary bg-gray-50" 
                     : "text-gray-700 hover:bg-gray-50 hover:text-primary font-medium border-l-4 border-transparent hover:border-primary"
-                }`}>
-                  Health
-                </a>
+                }`}
+              >
+                Health
               </Link>
-              <Link href="/category/sports" onClick={onClose}>
-                <a className={`block px-4 py-2 ${
+              <Link 
+                href="/category/sports" 
+                onClick={onClose}
+                className={`block px-4 py-2 ${
                   location === "/category/sports" 
                     ? "text-primary font-medium border-l-4 border-primary bg-gray-50" 
                     : "text-gray-700 hover:bg-gray-50 hover:text-primary font-medium border-l-4 border-transparent hover:border-primary"
-                }`}>
-                  Sports
-                </a>
+                }`}
+              >
+                Sports
               </Link>
-              <Link href="/category/arts" onClick={onClose}>
-                <a className={`block px-4 py-2 ${
+              <Link 
+                href="/category/arts" 
+                onClick={onClose}
+                className={`block px-4 py-2 ${
                   location === "/category/arts" 
                     ? "text-primary font-medium border-l-4 border-primary bg-gray-50" 
                     : "text-gray-700 hover:bg-gray-50 hover:text-primary font-medium border-l-4 border-transparent hover:border-primary"
-                }`}>
-                  Arts
-                </a>
+                }`}
+              >
+                Arts
               </Link>
             </div>
             <div className="border-t border-gray-200 p-4">

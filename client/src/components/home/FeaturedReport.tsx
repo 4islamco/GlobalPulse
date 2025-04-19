@@ -77,25 +77,23 @@ const FeaturedReport = () => {
             </div>
           )}
           
-          <Link href={`/article/${article.id}`}>
-            <a className="inline-flex items-center px-4 py-2 border border-secondary text-secondary rounded-md hover:bg-secondary hover:text-white transition-colors font-medium">
-              Read Full Report
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="16" 
-                height="16" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                className="ml-2"
-              >
-                <path d="M5 12h14"/>
-                <path d="m12 5 7 7-7 7"/>
-              </svg>
-            </a>
+          <Link href={`/article/${article.id}`} className="inline-flex items-center px-4 py-2 border border-secondary text-secondary rounded-md hover:bg-secondary hover:text-white transition-colors font-medium">
+            Read Full Report
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="16" 
+              height="16" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              className="ml-2"
+            >
+              <path d="M5 12h14"/>
+              <path d="m12 5 7 7-7 7"/>
+            </svg>
           </Link>
         </div>
         <div className="md:w-1/3 h-52 md:h-80 relative rounded-lg overflow-hidden">
