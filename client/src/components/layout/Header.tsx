@@ -10,20 +10,20 @@ interface HeaderProps {
 
 const Header = ({ onOpenSearch, onOpenMobileMenu }: HeaderProps) => {
   return (
-    <header className="sticky top-0 z-50 shadow-md bg-white">
+    <header className="sticky top-0 z-50 shadow-lg bg-background">
       {/* Top navigation bar */}
-      <div className="px-4 py-3 bg-white border-b border-gray-200 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="px-4 py-3 bg-background border-b border-white/10 sm:px-6 lg:px-8 flex items-center justify-between">
         <div className="flex items-center">
           {/* Mobile menu button */}
           <button 
             onClick={onOpenMobileMenu}
-            className="inline-flex items-center justify-center p-2 text-gray-500 rounded-md lg:hidden hover:bg-gray-100"
+            className="inline-flex items-center justify-center p-2 text-white/80 rounded-md lg:hidden hover:bg-white/10 border border-white/20 transition-colors"
             aria-label="Open menu"
           >
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
-              width="24" 
-              height="24" 
+              width="20" 
+              height="20" 
               viewBox="0 0 24 24" 
               fill="none" 
               stroke="currentColor" 
@@ -53,28 +53,28 @@ const Header = ({ onOpenSearch, onOpenMobileMenu }: HeaderProps) => {
         
         {/* Desktop nav links - hidden on mobile */}
         <nav className="hidden lg:flex space-x-6">
-          <Link href="/" className="px-1 py-2 text-gray-900 font-medium border-b-2 border-primary">Home</Link>
-          <Link href="/category/world" className="px-1 py-2 text-gray-700 font-medium hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary">World</Link>
-          <Link href="/category/politics" className="px-1 py-2 text-gray-700 font-medium hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary">Politics</Link>
-          <Link href="/category/business" className="px-1 py-2 text-gray-700 font-medium hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary">Business</Link>
-          <Link href="/category/technology" className="px-1 py-2 text-gray-700 font-medium hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary">Technology</Link>
-          <Link href="/category/science" className="px-1 py-2 text-gray-700 font-medium hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary">Science</Link>
-          <Link href="/category/health" className="px-1 py-2 text-gray-700 font-medium hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary">Health</Link>
-          <Link href="/category/sports" className="px-1 py-2 text-gray-700 font-medium hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary">Sports</Link>
-          <Link href="/category/arts" className="px-1 py-2 text-gray-700 font-medium hover:text-primary transition-colors border-b-2 border-transparent hover:border-primary">Arts</Link>
+          <Link href="/" className="px-1 py-2 text-white font-medium border-b-2 border-secondary">Home</Link>
+          <Link href="/category/world" className="px-1 py-2 text-white/80 font-medium hover:text-white transition-colors border-b-2 border-transparent hover:border-secondary">World</Link>
+          <Link href="/category/politics" className="px-1 py-2 text-white/80 font-medium hover:text-white transition-colors border-b-2 border-transparent hover:border-secondary">Politics</Link>
+          <Link href="/category/business" className="px-1 py-2 text-white/80 font-medium hover:text-white transition-colors border-b-2 border-transparent hover:border-secondary">Business</Link>
+          <Link href="/category/technology" className="px-1 py-2 text-white/80 font-medium hover:text-white transition-colors border-b-2 border-transparent hover:border-secondary">Technology</Link>
+          <Link href="/category/science" className="px-1 py-2 text-white/80 font-medium hover:text-white transition-colors border-b-2 border-transparent hover:border-secondary">Science</Link>
+          <Link href="/category/health" className="px-1 py-2 text-white/80 font-medium hover:text-white transition-colors border-b-2 border-transparent hover:border-secondary">Health</Link>
+          <Link href="/category/sports" className="px-1 py-2 text-white/80 font-medium hover:text-white transition-colors border-b-2 border-transparent hover:border-secondary">Sports</Link>
+          <Link href="/category/arts" className="px-1 py-2 text-white/80 font-medium hover:text-white transition-colors border-b-2 border-transparent hover:border-secondary">Arts</Link>
         </nav>
         
         <div className="flex items-center space-x-4">
           {/* Search button */}
           <button 
             onClick={onOpenSearch} 
-            className="p-2 text-gray-500 rounded-md hover:bg-gray-100"
+            className="p-2 text-white/80 rounded-md hover:bg-white/10 border border-white/20 transition-colors"
             aria-label="Search"
           >
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
-              width="20" 
-              height="20" 
+              width="18" 
+              height="18" 
               viewBox="0 0 24 24" 
               fill="none" 
               stroke="currentColor" 
@@ -89,9 +89,9 @@ const Header = ({ onOpenSearch, onOpenMobileMenu }: HeaderProps) => {
           </button>
           
           {/* User actions */}
-          <div className="hidden sm:flex items-center space-x-3">
-            <a href="#" className="text-sm font-medium text-gray-700 hover:text-primary">Sign In</a>
-            <a href="#" className="px-4 py-2 text-sm font-medium text-white gradient-blueberry-red rounded-md hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all">Subscribe</a>
+          <div className="hidden sm:flex items-center space-x-4">
+            <a href="#" className="text-sm font-medium text-white/80 hover:text-white transition-colors">Sign In</a>
+            <a href="#" className="px-4 py-2 text-sm font-medium text-white gradient-red-blueberry rounded-md hover:scale-105 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 transition-all shadow-md border border-white/20">Subscribe</a>
           </div>
         </div>
       </div>

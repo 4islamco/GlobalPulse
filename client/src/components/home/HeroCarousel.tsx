@@ -58,16 +58,18 @@ const HeroCarousel = () => {
 
   if (isLoading) {
     return (
-      <div className="relative overflow-hidden bg-black" style={{ height: "70vh", maxHeight: "650px", minHeight: "400px" }}>
-        <Skeleton className="w-full h-full bg-gray-800" />
+      <div className="relative overflow-hidden bg-background border-b border-muted" style={{ height: "70vh", maxHeight: "650px", minHeight: "400px" }}>
+        <div className="absolute inset-0 gradient-blueberry-red opacity-20"></div>
+        <Skeleton className="w-full h-full bg-muted/50" />
       </div>
     );
   }
 
   if (error || !featuredArticles || featuredArticles.length === 0) {
     return (
-      <div className="relative overflow-hidden bg-gray-900 flex items-center justify-center" style={{ height: "50vh", maxHeight: "500px", minHeight: "300px" }}>
-        <div className="text-center text-white">
+      <div className="relative overflow-hidden bg-background flex items-center justify-center border-b border-white/10" style={{ height: "50vh", maxHeight: "500px", minHeight: "300px" }}>
+        <div className="absolute inset-0 gradient-blueberry-red opacity-10"></div>
+        <div className="text-center text-white relative z-10 bg-background/40 backdrop-blur-sm p-8 rounded-lg border border-white/10">
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             width="48" 
@@ -78,7 +80,7 @@ const HeroCarousel = () => {
             strokeWidth="2" 
             strokeLinecap="round" 
             strokeLinejoin="round" 
-            className="mx-auto mb-4"
+            className="mx-auto mb-4 text-white/70"
           >
             <path d="M17.5 3A2.5 2.5 0 0 1 20 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 18.5v-13A2.5 2.5 0 0 1 6.5 3h11Z"/>
             <rect width="6" height="6" x="9" y="7" rx="1"/>
@@ -87,16 +89,16 @@ const HeroCarousel = () => {
             <path d="M7 16h6"/>
           </svg>
           <h2 className="text-xl font-bold">No Featured Stories Available</h2>
-          <p className="mt-2 text-gray-300">Check back later for breaking news and featured stories.</p>
+          <p className="mt-2 text-white/70">Check back later for breaking news and featured stories.</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="relative overflow-hidden bg-black" style={{ height: "70vh", maxHeight: "650px", minHeight: "400px" }}>
+    <div className="relative overflow-hidden bg-background border-b border-white/10" style={{ height: "70vh", maxHeight: "650px", minHeight: "400px" }}>
       <div className="absolute inset-0 z-10 bg-gradient-to-t from-black via-black/50 to-transparent opacity-70"></div>
-      <div className="absolute inset-0 z-10 gradient-overlay-dark opacity-40"></div>
+      <div className="absolute inset-0 z-10 gradient-blueberry-red opacity-30"></div>
       
       {/* Carousel content */}
       <div className="h-full relative">
@@ -125,18 +127,18 @@ const HeroCarousel = () => {
                   animate={{ opacity: index === currentSlide ? 1 : 0, y: index === currentSlide ? 0 : 20 }}
                   transition={{ delay: 0.3, duration: 0.5 }}
                 >
-                  <span className="inline-block gradient-blueberry-red text-white text-xs font-semibold px-2 py-1 rounded mb-3 tracking-wide uppercase">
+                  <span className="inline-block gradient-blueberry-red text-white text-xs font-semibold px-3 py-1.5 rounded-md mb-3 tracking-wide uppercase border border-white/20 shadow-md">
                     {/* Since we don't have category data in the article, we'll use a placeholder */}
                     Featured
                   </span>
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white font-sans mb-2 leading-tight">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white font-sans mb-3 leading-tight drop-shadow-lg">
                     {article.title}
                   </h2>
-                  <p className="text-gray-200 mb-4 line-clamp-2 md:line-clamp-3">
+                  <p className="text-white/90 mb-5 line-clamp-2 md:line-clamp-3 drop-shadow-md max-w-xl">
                     {article.summary}
                   </p>
                   <Link href={`/article/${article.id}`}>
-                    <div className="inline-flex items-center text-white font-medium hover:underline cursor-pointer">
+                    <div className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/30 rounded-md text-white font-medium transition-all hover:scale-105 cursor-pointer backdrop-blur-sm group">
                       Read Full Story
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
@@ -148,7 +150,7 @@ const HeroCarousel = () => {
                         strokeWidth="2" 
                         strokeLinecap="round" 
                         strokeLinejoin="round" 
-                        className="ml-2"
+                        className="ml-2 group-hover:translate-x-1 transition-transform"
                       >
                         <path d="M5 12h14"/>
                         <path d="m12 5 7 7-7 7"/>
@@ -167,8 +169,10 @@ const HeroCarousel = () => {
         {featuredArticles.map((_, index) => (
           <button 
             key={index}
-            className={`w-2.5 h-2.5 rounded-full bg-white transition-opacity ${
-              index === currentSlide ? "opacity-100" : "opacity-50"
+            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 border ${
+              index === currentSlide 
+                ? "bg-white border-white scale-110" 
+                : "bg-white/50 border-white/50 hover:bg-white/70 hover:border-white/70"
             }`}
             aria-current={index === currentSlide}
             aria-label={`Slide ${index + 1}`}
@@ -179,7 +183,7 @@ const HeroCarousel = () => {
       
       {/* Left/Right controls */}
       <button 
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-sm transition-colors"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/20 hover:bg-white/20 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-sm transition-all hover:scale-110 border border-white/30"
         onClick={handlePrev}
         aria-label="Previous slide"
       >
@@ -198,7 +202,7 @@ const HeroCarousel = () => {
         </svg>
       </button>
       <button 
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/30 hover:bg-black/50 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-sm transition-colors"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/20 hover:bg-white/20 text-white w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-sm transition-all hover:scale-110 border border-white/30"
         onClick={handleNext}
         aria-label="Next slide"
       >

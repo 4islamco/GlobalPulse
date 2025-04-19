@@ -10,31 +10,31 @@ const DailyBriefing = () => {
 
   if (isLoading) {
     return (
-      <section className="mb-12 bg-gray-900 text-white rounded-xl overflow-hidden">
+      <section className="mb-12 gradient-blueberry-red text-white rounded-xl overflow-hidden shadow-lg border border-primary/20">
         <div className="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-1">
             <div className="flex items-center mb-4">
-              <Skeleton className="w-10 h-10 rounded-full bg-gray-800 mr-3" />
-              <Skeleton className="h-7 w-48 bg-gray-800" />
+              <Skeleton className="w-10 h-10 rounded-full bg-background/40 backdrop-blur-sm mr-3" />
+              <Skeleton className="h-7 w-48 bg-background/40 backdrop-blur-sm" />
             </div>
-            <Skeleton className="h-4 w-full bg-gray-800 mb-2" />
-            <Skeleton className="h-4 w-3/4 bg-gray-800 mb-6" />
+            <Skeleton className="h-4 w-full bg-background/40 backdrop-blur-sm mb-2" />
+            <Skeleton className="h-4 w-3/4 bg-background/40 backdrop-blur-sm mb-6" />
             
-            <div className="bg-gray-800 rounded-lg p-4 mb-6">
-              <Skeleton className="h-6 w-40 bg-gray-700 mb-3" />
+            <div className="bg-background/30 backdrop-blur-sm rounded-lg p-4 mb-6">
+              <Skeleton className="h-6 w-40 bg-background/40 mb-3" />
               <div className="space-y-2">
                 {Array(4).fill(0).map((_, i) => (
-                  <Skeleton key={i} className="h-4 w-full bg-gray-700" />
+                  <Skeleton key={i} className="h-4 w-full bg-background/40" />
                 ))}
               </div>
             </div>
             
-            <Skeleton className="h-10 w-48 bg-gray-800" />
+            <Skeleton className="h-10 w-48 bg-background/40 backdrop-blur-sm" />
           </div>
           
           <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
             {Array(4).fill(0).map((_, i) => (
-              <Skeleton key={i} className="h-32 bg-gray-800 rounded-lg" />
+              <Skeleton key={i} className="h-32 bg-background/30 backdrop-blur-sm rounded-lg border border-white/10" />
             ))}
           </div>
         </div>
@@ -47,7 +47,7 @@ const DailyBriefing = () => {
   }
 
   return (
-    <section className="mb-12 bg-gray-900 text-white rounded-xl overflow-hidden">
+    <section className="mb-12 gradient-blueberry-red text-white rounded-xl overflow-hidden shadow-lg border border-primary/20">
       <div className="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-1">
           <motion.div 
@@ -56,7 +56,7 @@ const DailyBriefing = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center mr-3">
+            <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mr-3 border border-white/30">
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 width="20" 
@@ -77,7 +77,7 @@ const DailyBriefing = () => {
             <h2 className="text-2xl font-bold font-sans">The Daily Briefing</h2>
           </motion.div>
           <motion.p 
-            className="text-gray-300 mb-6"
+            className="text-white/80 mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
@@ -86,13 +86,13 @@ const DailyBriefing = () => {
           </motion.p>
           
           <motion.div 
-            className="bg-gray-800 rounded-lg p-4 mb-6"
+            className="bg-background/20 backdrop-blur-sm rounded-lg p-4 mb-6 border border-white/10"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
             <h3 className="font-medium mb-2 text-lg">Today's Highlights</h3>
-            <ul className="space-y-2 text-gray-300">
+            <ul className="space-y-2 text-white/80">
               <li className="flex items-center">
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
@@ -104,7 +104,7 @@ const DailyBriefing = () => {
                   strokeWidth="2" 
                   strokeLinecap="round" 
                   strokeLinejoin="round" 
-                  className="text-green-400 mr-2"
+                  className="text-white mr-2"
                 >
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                   <path d="m9 11 3 3L22 4"/>
@@ -122,7 +122,7 @@ const DailyBriefing = () => {
                   strokeWidth="2" 
                   strokeLinecap="round" 
                   strokeLinejoin="round" 
-                  className="text-green-400 mr-2"
+                  className="text-white mr-2"
                 >
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                   <path d="m9 11 3 3L22 4"/>
@@ -140,7 +140,7 @@ const DailyBriefing = () => {
                   strokeWidth="2" 
                   strokeLinecap="round" 
                   strokeLinejoin="round" 
-                  className="text-green-400 mr-2"
+                  className="text-white mr-2"
                 >
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                   <path d="m9 11 3 3L22 4"/>
@@ -158,7 +158,7 @@ const DailyBriefing = () => {
                   strokeWidth="2" 
                   strokeLinecap="round" 
                   strokeLinejoin="round" 
-                  className="text-green-400 mr-2"
+                  className="text-white mr-2"
                 >
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                   <path d="m9 11 3 3L22 4"/>
@@ -170,7 +170,7 @@ const DailyBriefing = () => {
           
           <motion.a 
             href="#" 
-            className="inline-flex items-center px-4 py-2 border border-white rounded-md hover:bg-white hover:text-gray-900 transition-colors font-medium"
+            className="inline-flex items-center px-4 py-2 border border-white/70 rounded-md bg-white/10 hover:bg-white hover:text-primary transition-all hover:scale-105 font-medium"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
@@ -198,14 +198,14 @@ const DailyBriefing = () => {
           {briefingItems.map((item, index) => (
             <motion.div 
               key={item.id} 
-              className="bg-gray-800 rounded-lg p-4 hover:bg-gray-700 transition-colors"
+              className="bg-background/20 backdrop-blur-sm rounded-lg p-4 hover:bg-white/10 transition-all hover:scale-[1.02] border border-white/10"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 + (index * 0.1), duration: 0.5 }}
             >
-              <span className="text-xs font-medium text-gray-400 mb-1 block">{item.category}</span>
-              <h3 className={`font-bold text-base mb-2 font-sans ${item.color} pl-2`}>{item.title}</h3>
-              <p className="text-gray-300 text-sm line-clamp-3">{item.summary}</p>
+              <span className="text-xs font-medium text-white/60 mb-1 block">{item.category}</span>
+              <h3 className="font-bold text-base mb-2 font-sans text-white pl-2 border-l-2 border-white/70">{item.title}</h3>
+              <p className="text-white/80 text-sm line-clamp-3">{item.summary}</p>
             </motion.div>
           ))}
         </div>

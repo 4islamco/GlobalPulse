@@ -17,29 +17,29 @@ const FeaturedReport = () => {
 
   if (isLoadingArticle || isLoadingAuthor) {
     return (
-      <section className="mb-12 bg-gradient-to-r from-gray-50 to-gray-100 p-6 sm:p-8 rounded-xl">
+      <section className="mb-12 bg-gradient-to-br from-card to-background border border-muted/50 p-6 sm:p-8 rounded-xl">
         <div className="flex flex-col md:flex-row md:items-center">
           <div className="md:w-2/3 md:pr-8 mb-6 md:mb-0">
             <div className="flex items-center mb-4">
-              <Skeleton className="h-6 w-32 mr-3" />
-              <Skeleton className="h-4 w-48" />
+              <Skeleton className="h-6 w-32 mr-3 bg-muted" />
+              <Skeleton className="h-4 w-48 bg-muted" />
             </div>
-            <Skeleton className="h-8 w-full mb-2" />
-            <Skeleton className="h-8 w-3/4 mb-4" />
-            <Skeleton className="h-4 w-full mb-2" />
-            <Skeleton className="h-4 w-full mb-2" />
-            <Skeleton className="h-4 w-3/4 mb-6" />
+            <Skeleton className="h-8 w-full mb-2 bg-muted" />
+            <Skeleton className="h-8 w-3/4 mb-4 bg-muted" />
+            <Skeleton className="h-4 w-full mb-2 bg-muted" />
+            <Skeleton className="h-4 w-full mb-2 bg-muted" />
+            <Skeleton className="h-4 w-3/4 mb-6 bg-muted" />
             <div className="flex items-center mb-4">
-              <Skeleton className="w-12 h-12 rounded-full mr-3" />
+              <Skeleton className="w-12 h-12 rounded-full mr-3 bg-muted" />
               <div>
-                <Skeleton className="h-4 w-32 mb-1" />
-                <Skeleton className="h-3 w-48" />
+                <Skeleton className="h-4 w-32 mb-1 bg-muted" />
+                <Skeleton className="h-3 w-48 bg-muted" />
               </div>
             </div>
-            <Skeleton className="h-10 w-36" />
+            <Skeleton className="h-10 w-36 bg-muted" />
           </div>
           <div className="md:w-1/3 h-52 md:h-80 relative rounded-lg overflow-hidden">
-            <Skeleton className="w-full h-full" />
+            <Skeleton className="w-full h-full bg-muted" />
           </div>
         </div>
       </section>
@@ -53,31 +53,33 @@ const FeaturedReport = () => {
   const publishDate = article.publishedAt ? format(new Date(article.publishedAt), 'MMMM d, yyyy') : '';
 
   return (
-    <section className="mb-12 bg-gradient-to-r from-gray-50 to-gray-100 p-6 sm:p-8 rounded-xl">
+    <section className="mb-12 bg-gradient-to-br from-card to-background border border-muted/50 p-6 sm:p-8 rounded-xl">
       <div className="flex flex-col md:flex-row md:items-center">
         <div className="md:w-2/3 md:pr-8 mb-6 md:mb-0">
           <div className="flex items-center mb-4">
-            <span className="bg-primary text-white text-xs font-semibold px-2 py-1 rounded mr-3">FEATURED REPORT</span>
-            <span className="text-gray-500 text-sm">Published on {publishDate}</span>
+            <span className="gradient-blueberry-red text-white text-xs font-semibold px-3 py-1.5 rounded-md mr-3">FEATURED REPORT</span>
+            <span className="text-muted-foreground text-sm">Published on {publishDate}</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold font-sans leading-tight mb-4">{article.title}</h2>
-          <p className="text-gray-700 mb-6 line-clamp-3 md:line-clamp-4">{article.summary}</p>
+          <h2 className="text-2xl sm:text-3xl font-bold font-sans leading-tight mb-4 gradient-text">{article.title}</h2>
+          <p className="text-foreground/80 mb-6 line-clamp-3 md:line-clamp-4">{article.summary}</p>
           
           {author && (
             <div className="flex items-center mb-4">
-              <img 
-                src={author.avatarUrl} 
-                alt={author.name}
-                className="w-12 h-12 rounded-full object-cover mr-3"
-              />
+              <div className="w-12 h-12 rounded-full mr-3 border border-primary/30 p-0.5 overflow-hidden">
+                <img 
+                  src={author.avatarUrl} 
+                  alt={author.name}
+                  className="w-full h-full rounded-full object-cover"
+                />
+              </div>
               <div>
-                <p className="font-medium">By {author.name}</p>
-                <p className="text-sm text-gray-600">{author.title}</p>
+                <p className="font-medium text-foreground">By {author.name}</p>
+                <p className="text-sm text-muted-foreground">{author.title}</p>
               </div>
             </div>
           )}
           
-          <Link href={`/article/${article.id}`} className="inline-flex items-center px-4 py-2 border border-secondary text-secondary rounded-md hover:bg-secondary hover:text-white transition-colors font-medium">
+          <Link href={`/article/${article.id}`} className="inline-flex items-center px-4 py-2 gradient-blueberry-red text-white rounded-md hover:opacity-90 transition-all hover:translate-y-[-2px] font-medium">
             Read Full Report
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
@@ -96,7 +98,8 @@ const FeaturedReport = () => {
             </svg>
           </Link>
         </div>
-        <div className="md:w-1/3 h-52 md:h-80 relative rounded-lg overflow-hidden">
+        <div className="md:w-1/3 h-52 md:h-80 relative rounded-lg overflow-hidden border border-primary/20 shadow-lg">
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent z-10"></div>
           <img 
             src={article.imageUrl} 
             alt={article.title} 
