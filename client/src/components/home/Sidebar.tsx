@@ -233,9 +233,9 @@ const Sidebar = () => {
             ))
           )}
           <Link href="#">
-            <a className="block text-center text-secondary hover:text-secondary/70 text-sm font-medium pt-2">
+            <span className="block text-center text-secondary hover:text-secondary/70 text-sm font-medium pt-2 cursor-pointer">
               See All Updates
-            </a>
+            </span>
           </Link>
         </div>
       </div>
