@@ -129,17 +129,17 @@ const WorldCoverage = () => {
             strokeWidth="2" 
             strokeLinecap="round" 
             strokeLinejoin="round" 
-            className="mr-2 text-secondary"
+            className="mr-2 gradient-text"
           >
             <circle cx="12" cy="12" r="10"/>
             <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
             <path d="M2 12h20"/>
           </svg>
-          World Coverage
+          <span className="gradient-text">World Coverage</span>
         </h2>
         <div className="flex space-x-3">
           <button 
-            className="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-700"
+            className="w-8 h-8 rounded-full bg-card hover:bg-muted flex items-center justify-center text-foreground"
             onClick={handlePrev}
             aria-label="Previous region"
           >
