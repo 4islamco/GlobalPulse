@@ -47,7 +47,7 @@ const NewsCard = ({ article, display = 'card' }: NewsCardProps) => {
       <article className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row">
         <div className="sm:w-1/3 mb-4 sm:mb-0 sm:mr-4">
           <Link href={`/article/${article.id}`}>
-            <a className="block h-48 sm:h-32 rounded-lg overflow-hidden">
+            <div className="block h-48 sm:h-32 rounded-lg overflow-hidden cursor-pointer">
               <motion.img 
                 src={article.imageUrl} 
                 alt={article.title} 
@@ -55,7 +55,7 @@ const NewsCard = ({ article, display = 'card' }: NewsCardProps) => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.5 }}
               />
-            </a>
+            </div>
           </Link>
         </div>
         <div className="sm:w-2/3">
@@ -73,7 +73,7 @@ const NewsCard = ({ article, display = 'card' }: NewsCardProps) => {
           </h3>
           <p className="text-gray-600 text-sm mb-3 line-clamp-2">{article.summary}</p>
           <Link href={`/article/${article.id}`}>
-            <a className="text-secondary hover:text-secondary/70 text-sm font-medium flex items-center w-max">
+            <span className="text-secondary hover:text-secondary/70 text-sm font-medium flex items-center w-max cursor-pointer">
               Continue Reading
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
@@ -89,7 +89,7 @@ const NewsCard = ({ article, display = 'card' }: NewsCardProps) => {
               >
                 <path d="m9 18 6-6-6-6"/>
               </svg>
-            </a>
+            </span>
           </Link>
         </div>
       </article>
