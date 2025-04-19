@@ -224,63 +224,60 @@ const WorldCoverage = () => {
         </div>
         
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
-          <AnimatePresence mode="wait">
-            {displayedRegions.map((regionIndex, index) => {
-              const region = regions[regionIndex];
-              const { data: regionNews, isLoading } = regionNewsQueries[index] || { data: [], isLoading: true };
-              
-              return (
-                <motion.div
-                  key={region.id}
-                  className="bg-white/90 backdrop-blur-sm rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <div className="flex items-center mb-3">
-                    <span className={`w-2 h-2 rounded-full ${index === 0 ? 'bg-primary' : index === 1 ? 'bg-secondary' : 'bg-accent'} mr-2`}></span>
-                    <h3 className="font-bold text-base">{region.name}</h3>
-                  </div>
-                  {isLoading ? (
-                    <ul className="space-y-3">
-                      {Array(3).fill(0).map((_, i) => (
-                        <li key={i}>
-                          <Skeleton className="h-4 w-full" />
-                        </li>
-                      ))}
-                    </ul>
-                  ) : !regionNews || regionNews.length === 0 ? (
-                    <p className="text-gray-500 text-sm">No news available for this region</p>
-                  ) : (
-                    <ul className="space-y-3">
-                      {regionNews.map(news => (
-                        <li key={news.id}>
-                          <a href="#" className="flex items-start hover:text-secondary transition-colors">
-                            <svg 
-                              xmlns="http://www.w3.org/2000/svg" 
-                              width="16" 
-                              height="16" 
-                              viewBox="0 0 24 24" 
-                              fill="none" 
-                              stroke="currentColor" 
-                              strokeWidth="2" 
-                              strokeLinecap="round" 
-                              strokeLinejoin="round" 
-                              className="text-gray-400 mt-1 mr-2"
-                            >
-                              <path d="m9 18 6-6-6-6"/>
-                            </svg>
-                            <span className="text-sm">{news.title}</span>
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
+          {displayedRegions.map((regionIndex, index) => {
+            const region = regions[regionIndex];
+            const { data: regionNews, isLoading } = regionNewsQueries[index] || { data: [], isLoading: true };
+            
+            return (
+              <motion.div
+                key={region.id}
+                className="bg-white/90 backdrop-blur-sm rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="flex items-center mb-3">
+                  <span className={`w-2 h-2 rounded-full ${index === 0 ? 'bg-primary' : index === 1 ? 'bg-secondary' : 'bg-accent'} mr-2`}></span>
+                  <h3 className="font-bold text-base">{region.name}</h3>
+                </div>
+                {isLoading ? (
+                  <ul className="space-y-3">
+                    {Array(3).fill(0).map((_, i) => (
+                      <li key={i}>
+                        <Skeleton className="h-4 w-full" />
+                      </li>
+                    ))}
+                  </ul>
+                ) : !regionNews || regionNews.length === 0 ? (
+                  <p className="text-gray-500 text-sm">No news available for this region</p>
+                ) : (
+                  <ul className="space-y-3">
+                    {regionNews.map(news => (
+                      <li key={news.id}>
+                        <button className="flex items-start hover:text-secondary transition-colors text-left w-full">
+                          <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="16" 
+                            height="16" 
+                            viewBox="0 0 24 24" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            strokeWidth="2" 
+                            strokeLinecap="round" 
+                            strokeLinejoin="round" 
+                            className="text-gray-400 mt-1 mr-2"
+                          >
+                            <path d="m9 18 6-6-6-6"/>
+                          </svg>
+                          <span className="text-sm">{news.title}</span>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

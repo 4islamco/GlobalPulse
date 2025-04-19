@@ -117,7 +117,7 @@ const NewsCard = ({ article, display = 'card' }: NewsCardProps) => {
             </h2>
             <p className="text-gray-200 mb-3 line-clamp-2">{article.summary}</p>
             <Link href={`/article/${article.id}`}>
-              <a className="inline-flex items-center text-white font-medium hover:underline">
+              <span className="inline-flex items-center text-white font-medium hover:underline cursor-pointer">
                 Read Full Story
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
@@ -134,7 +134,7 @@ const NewsCard = ({ article, display = 'card' }: NewsCardProps) => {
                   <path d="M5 12h14"/>
                   <path d="m12 5 7 7-7 7"/>
                 </svg>
-              </a>
+              </span>
             </Link>
           </div>
         </div>
@@ -146,7 +146,7 @@ const NewsCard = ({ article, display = 'card' }: NewsCardProps) => {
   return (
     <div className="bg-white rounded-lg shadow-sm overflow-hidden transition-all hover:shadow-md">
       <Link href={`/article/${article.id}`}>
-        <a className="block group">
+        <div className="block group cursor-pointer">
           <div className="relative h-48 overflow-hidden">
             <motion.img 
               src={article.imageUrl} 
@@ -172,7 +172,7 @@ const NewsCard = ({ article, display = 'card' }: NewsCardProps) => {
               <span>{article.readingTimeMinutes} min read</span>
             </div>
           </div>
-        </a>
+        </div>
       </Link>
     </div>
   );

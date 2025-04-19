@@ -2,9 +2,8 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Article, Category } from "@/lib/types";
 import { Link } from "wouter";
-import { format } from "date-fns";
 import { Skeleton } from "@/components/ui/skeleton";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const LatestNews = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
@@ -140,69 +139,66 @@ const LatestNews = () => {
             <p className="text-gray-600">No articles available at the moment.</p>
           </div>
         ) : (
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={viewMode + (activeCategory || "all")}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="space-y-6"
-            >
-              {articles.map((article) => {
-                const category = getCategoryForArticle(article);
-                return (
-                  <article key={article.id} className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row">
-                    <div className="sm:w-1/3 mb-4 sm:mb-0 sm:mr-4">
-                      <Link href={`/article/${article.id}`}>
-                        <a className="h-48 sm:h-32 rounded-lg overflow-hidden block">
-                          <img 
-                            src={article.imageUrl} 
-                            alt={article.title} 
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                          />
-                        </a>
-                      </Link>
-                    </div>
-                    <div className="sm:w-2/3">
-                      <div className="flex items-center text-xs text-gray-500 mb-2">
-                        {category && (
-                          <span className={`font-medium px-2 py-0.5 rounded mr-2 ${category.color}`}>
-                            {category.name}
-                          </span>
-                        )}
-                        <span className="mx-2">•</span>
-                        <span>{formatTimeAgo(article.publishedAt)}</span>
+          <motion.div
+            key={viewMode + (activeCategory || "all")}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="space-y-6"
+          >
+            {articles.map((article) => {
+              const category = getCategoryForArticle(article);
+              return (
+                <article key={article.id} className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row">
+                  <div className="sm:w-1/3 mb-4 sm:mb-0 sm:mr-4">
+                    <Link href={`/article/${article.id}`}>
+                      <div className="h-48 sm:h-32 rounded-lg overflow-hidden block cursor-pointer">
+                        <img 
+                          src={article.imageUrl} 
+                          alt={article.title} 
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        />
                       </div>
-                      <h3 className="font-bold text-lg mb-2 font-sans hover:text-secondary transition-colors">
-                        <Link href={`/article/${article.id}`}>{article.title}</Link>
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-3 line-clamp-2">{article.summary}</p>
-                      <Link href={`/article/${article.id}`}>
-                        <a className="text-secondary hover:text-secondary/70 text-sm font-medium flex items-center w-max">
-                          Continue Reading
-                          <svg 
-                            xmlns="http://www.w3.org/2000/svg" 
-                            width="14" 
-                            height="14" 
-                            viewBox="0 0 24 24" 
-                            fill="none" 
-                            stroke="currentColor" 
-                            strokeWidth="2" 
-                            strokeLinecap="round" 
-                            strokeLinejoin="round" 
-                            className="ml-1 text-xs"
-                          >
-                            <path d="m9 18 6-6-6-6"/>
-                          </svg>
-                        </a>
-                      </Link>
+                    </Link>
+                  </div>
+                  <div className="sm:w-2/3">
+                    <div className="flex items-center text-xs text-gray-500 mb-2">
+                      {category && (
+                        <span className={`font-medium px-2 py-0.5 rounded mr-2 ${category.color}`}>
+                          {category.name}
+                        </span>
+                      )}
+                      <span className="mx-2">•</span>
+                      <span>{formatTimeAgo(article.publishedAt)}</span>
                     </div>
-                  </article>
-                );
-              })}
-            </motion.div>
-          </AnimatePresence>
+                    <h3 className="font-bold text-lg mb-2 font-sans hover:text-secondary transition-colors">
+                      <Link href={`/article/${article.id}`}>{article.title}</Link>
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-3 line-clamp-2">{article.summary}</p>
+                    <Link href={`/article/${article.id}`}>
+                      <span className="text-secondary hover:text-secondary/70 text-sm font-medium flex items-center w-max cursor-pointer">
+                        Continue Reading
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          width="14" 
+                          height="14" 
+                          viewBox="0 0 24 24" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          strokeWidth="2" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          className="ml-1 text-xs"
+                        >
+                          <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                      </span>
+                    </Link>
+                  </div>
+                </article>
+              );
+            })}
+          </motion.div>
         )}
 
         <div className="text-center pt-4">
