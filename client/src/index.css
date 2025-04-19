@@ -19,10 +19,10 @@
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     
-    --primary: 0 65% 50%;
+    --primary: 240 65% 35%;
     --primary-foreground: 210 40% 98%;
     
-    --secondary: 210 79% 46%;
+    --secondary: 0 65% 50%;
     --secondary-foreground: 210 40% 98%;
     
     --accent: 45 100% 51%;
@@ -35,11 +35,15 @@
     
     --radius: 0.5rem;
 
-    --chart-1: 210 79% 46%;
+    --chart-1: 240 65% 35%;
     --chart-2: 0 65% 50%;
     --chart-3: 45 100% 51%;
     --chart-4: 142 71% 45%;
     --chart-5: 262 83% 58%;
+    
+    /* Custom gradient colors */
+    --blueberry: 240 65% 35%;
+    --red: 0 65% 50%;
   }
 
   * {
@@ -103,4 +107,70 @@
 
 .ticker-content:hover {
   animation-play-state: paused;
+}
+
+/* Custom gradient overlays */
+.gradient-blueberry-red {
+  background: linear-gradient(135deg, hsl(var(--blueberry)), hsl(var(--red)));
+}
+
+.gradient-red-blueberry {
+  background: linear-gradient(135deg, hsl(var(--red)), hsl(var(--blueberry)));
+}
+
+.gradient-overlay-light {
+  position: relative;
+}
+
+.gradient-overlay-light::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, hsla(var(--blueberry), 0.85), hsla(var(--red), 0.85));
+  border-radius: inherit;
+  z-index: 1;
+  opacity: 0.2;
+  transition: opacity 0.3s ease;
+}
+
+.gradient-overlay-light:hover::before {
+  opacity: 0.4;
+}
+
+.gradient-overlay-dark {
+  position: relative;
+}
+
+.gradient-overlay-dark::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, hsla(var(--blueberry), 0.9), hsla(var(--red), 0.9));
+  border-radius: inherit;
+  z-index: 1;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.gradient-overlay-dark:hover::before {
+  opacity: 0.7;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, hsl(var(--blueberry)), hsl(var(--red)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.world-logo {
+  color: hsl(var(--blueberry));
+  font-weight: 800;
 }

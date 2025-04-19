@@ -41,12 +41,12 @@ const Header = ({ onOpenSearch, onOpenMobileMenu }: HeaderProps) => {
           {/* Logo */}
           <Link href="/" className="flex items-center ml-2 lg:ml-0">
             <motion.span 
-              className="text-primary font-bold text-2xl font-sans tracking-tight"
+              className="gradient-text font-bold text-2xl font-sans tracking-tight"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              REAL<span className="text-secondary">WORLD</span>
+              REAL<span className="world-logo">WORLD</span>
             </motion.span>
           </Link>
         </div>
@@ -91,7 +91,7 @@ const Header = ({ onOpenSearch, onOpenMobileMenu }: HeaderProps) => {
           {/* User actions */}
           <div className="hidden sm:flex items-center space-x-3">
             <a href="#" className="text-sm font-medium text-gray-700 hover:text-primary">Sign In</a>
-            <a href="#" className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors">Subscribe</a>
+            <a href="#" className="px-4 py-2 text-sm font-medium text-white gradient-blueberry-red rounded-md hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all">Subscribe</a>
           </div>
         </div>
       </div>
