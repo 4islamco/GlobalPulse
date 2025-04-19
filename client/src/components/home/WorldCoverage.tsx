@@ -93,20 +93,20 @@ const WorldCoverage = () => {
     return (
       <section className="mb-12">
         <div className="flex items-center justify-between mb-6">
-          <Skeleton className="h-8 w-48" />
+          <Skeleton className="h-8 w-48 bg-card" />
           <div className="flex space-x-3">
-            <Skeleton className="w-8 h-8 rounded-full" />
-            <Skeleton className="w-8 h-8 rounded-full" />
+            <Skeleton className="w-8 h-8 rounded-full bg-card" />
+            <Skeleton className="w-8 h-8 rounded-full bg-card" />
           </div>
         </div>
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-6">
           {Array(6).fill(0).map((_, i) => (
-            <Skeleton key={i} className="h-10 w-full rounded-md" />
+            <Skeleton key={i} className="h-10 w-full rounded-md bg-card" />
           ))}
         </div>
         
-        <Skeleton className="h-80 w-full rounded-xl" />
+        <Skeleton className="h-80 w-full rounded-xl bg-card" />
       </section>
     );
   }
@@ -158,7 +158,7 @@ const WorldCoverage = () => {
             </svg>
           </button>
           <button 
-            className="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-700"
+            className="w-8 h-8 rounded-full bg-card hover:bg-muted flex items-center justify-center text-foreground"
             onClick={handleNext}
             aria-label="Next region"
           >
@@ -192,7 +192,7 @@ const WorldCoverage = () => {
             className={`px-4 py-2 ${
               activeRegion === index 
                 ? "gradient-red-blueberry text-white" 
-                : "bg-white hover:bg-gray-100 text-gray-700"
+                : "bg-card hover:bg-muted text-foreground"
             } rounded-md font-medium text-sm transition-colors`}
             onClick={() => handleRegionClick(index)}
           >
@@ -201,10 +201,10 @@ const WorldCoverage = () => {
         ))}
       </div>
       
-      <div className="relative bg-white rounded-xl shadow-sm overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-gray-100">
+      <div className="relative bg-card rounded-xl shadow-md overflow-hidden border border-muted">
+        <div className="absolute inset-0 z-0 bg-background/50">
           {/* World map visualization - in a real app this would be an SVG map */}
-          <div className="w-full h-full bg-gray-200 opacity-40 flex items-center justify-center">
+          <div className="w-full h-full opacity-20 flex items-center justify-center">
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               width="80" 
@@ -215,7 +215,7 @@ const WorldCoverage = () => {
               strokeWidth="1" 
               strokeLinecap="round" 
               strokeLinejoin="round" 
-              className="text-gray-400"
+              className="text-foreground"
             >
               <path d="M20 7h-7.667a1.98 1.98 0 0 0-1.414.586l-8.262 8.262a2 2 0 0 0 0 2.828l2.828 2.828a2 2 0 0 0 2.828 0l8.262-8.262A1.98 1.98 0 0 0 17.161 12V4.333a2 2 0 0 0 2-2V2a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v.333a2 2 0 0 0 2 2V7Z"/>
               <path d="m6 18 8-8"/>
@@ -231,7 +231,7 @@ const WorldCoverage = () => {
             return (
               <motion.div
                 key={region.id}
-                className="bg-white/90 backdrop-blur-sm rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow"
+                className="bg-card/90 backdrop-blur-sm rounded-lg border border-muted p-4 hover:shadow-md transition-shadow"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
@@ -244,17 +244,17 @@ const WorldCoverage = () => {
                   <ul className="space-y-3">
                     {Array(3).fill(0).map((_, i) => (
                       <li key={i}>
-                        <Skeleton className="h-4 w-full" />
+                        <Skeleton className="h-4 w-full bg-muted" />
                       </li>
                     ))}
                   </ul>
                 ) : !regionNews || regionNews.length === 0 ? (
-                  <p className="text-gray-500 text-sm">No news available for this region</p>
+                  <p className="text-muted-foreground text-sm">No news available for this region</p>
                 ) : (
                   <ul className="space-y-3">
                     {regionNews.map(news => (
                       <li key={news.id}>
-                        <button className="flex items-start hover:text-secondary transition-colors text-left w-full">
+                        <button className="flex items-start hover:text-primary transition-all hover:translate-x-1 text-left w-full">
                           <svg 
                             xmlns="http://www.w3.org/2000/svg" 
                             width="16" 
@@ -265,7 +265,7 @@ const WorldCoverage = () => {
                             strokeWidth="2" 
                             strokeLinecap="round" 
                             strokeLinejoin="round" 
-                            className="text-gray-400 mt-1 mr-2"
+                            className="text-muted-foreground mt-1 mr-2"
                           >
                             <path d="m9 18 6-6-6-6"/>
                           </svg>
